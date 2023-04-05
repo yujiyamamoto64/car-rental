@@ -35,4 +35,9 @@ public class CarService {
 		newObj.setUpdated(new Date());
 		return carRepository.save(newObj);
 	}
+	
+	public void delete (Long id) {
+		findById(id);
+		carRepository.deleteById(id);
+	}
 }
