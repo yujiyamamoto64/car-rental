@@ -69,4 +69,10 @@ public class CarController {
 		return ResponseEntity.ok().body(list);
 	}
 	
+	@GetMapping(value = "/unsolds")
+	public ResponseEntity<List<Car>> findByVendidoFalse() {
+		List<Car> list = carService.findByVendidoFalse();
+		return ResponseEntity.ok().body(list);
+	}
+	
 }

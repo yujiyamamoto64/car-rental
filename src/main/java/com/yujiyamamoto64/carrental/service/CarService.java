@@ -49,4 +49,8 @@ public class CarService {
 	public List<Car> findByMarcaAndAno(String marca, Integer ano) {
 		return carRepository.findByMarcaAndAno(marca, ano);
 	}
+
+	public List<Car> findByVendidoFalse() {
+		return carRepository.findByVendidoFalse();
+	}
 }
