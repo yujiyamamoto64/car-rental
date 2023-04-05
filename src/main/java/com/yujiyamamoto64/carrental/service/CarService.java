@@ -1,6 +1,7 @@
 package com.yujiyamamoto64.carrental.service;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +40,9 @@ public class CarService {
 	public void delete (Long id) {
 		findById(id);
 		carRepository.deleteById(id);
+	}
+	
+	public List<Car> findAll() {
+		return carRepository.findAll();
 	}
 }
