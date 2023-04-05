@@ -2,6 +2,7 @@ package com.yujiyamamoto64.carrental.controller;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -54,6 +55,12 @@ public class CarController {
 		List<Car> list = carService.findAll();
 		return ResponseEntity.ok().body(list);
 		
+	}
+	
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<?> findById(@PathVariable Long id) {
+		Optional<Car> obj = carService.findById(id);
+		return ResponseEntity.ok().body(obj);
 	}
 	
 }
