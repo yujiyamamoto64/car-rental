@@ -11,4 +11,6 @@ public interface CarRepository extends JpaRepository<Car, Long> {
 	List<Car> findByMarcaAndAno(String marca, Integer ano);
 
 	List<Car> findByVendidoFalse();
+
+	List<Car> findByAnoBetween(Integer anoInicial, Integer anoFinal);
 }

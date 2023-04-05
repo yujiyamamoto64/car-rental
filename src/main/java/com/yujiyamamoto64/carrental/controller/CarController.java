@@ -75,4 +75,10 @@ public class CarController {
 		return ResponseEntity.ok().body(list);
 	}
 	
+	@GetMapping(value = "/decade/{anoInicial}/{anoFinal}")
+	public ResponseEntity<List<Car>> findByDecade(@PathVariable Integer anoInicial, @PathVariable Integer anoFinal) {
+		List<Car> list = carService.findByAnoBetween(anoInicial, anoFinal);
+		return ResponseEntity.ok().body(list);
+	}
+	
 }

@@ -53,4 +53,8 @@ public class CarService {
 	public List<Car> findByVendidoFalse() {
 		return carRepository.findByVendidoFalse();
 	}
+
+	public List<Car> findByAnoBetween(Integer anoInicial, Integer anoFinal) {
+		return carRepository.findByAnoBetween(anoInicial, anoFinal);
+	}
 }
