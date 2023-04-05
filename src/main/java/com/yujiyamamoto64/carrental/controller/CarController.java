@@ -63,4 +63,10 @@ public class CarController {
 		return ResponseEntity.ok().body(obj);
 	}
 	
+	@GetMapping(value = "/{marca}/{ano}")
+	public ResponseEntity<List<Car>> findByMarcaAndAno(@PathVariable String marca, @PathVariable Integer ano) {
+		List<Car> list = carService.findByMarcaAndAno(marca, ano);
+		return ResponseEntity.ok().body(list);
+	}
+	
 }

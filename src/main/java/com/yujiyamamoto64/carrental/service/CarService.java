@@ -45,4 +45,8 @@ public class CarService {
 	public List<Car> findAll() {
 		return carRepository.findAll();
 	}
+
+	public List<Car> findByMarcaAndAno(String marca, Integer ano) {
+		return carRepository.findByMarcaAndAno(marca, ano);
+	}
 }
